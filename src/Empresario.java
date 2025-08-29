@@ -7,7 +7,7 @@ public class Empresario{
         this.nome = nome;
         this.cnpj = cnpj;
     }
-    //Getters e Setters
+
     public String getNome() {
         return nome;
     }
