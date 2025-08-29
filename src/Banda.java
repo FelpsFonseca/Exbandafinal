@@ -3,21 +3,16 @@ public class Banda{
     String nome;
     String genero;
     Empresario empresario;
-    Musica[] musicas = new Musica[3];
-    Membro[] membros = new Membro[3];
+    Musica[] musicas = new Musica[10];
+    Membro[] membros = new Membro[10];
+
+    public void setEmpresario(Empresario empresario) {
+        this.empresario = empresario;
+    }
 
     public Banda(String nome, String genero){
         this.nome = nome;
         this.genero = genero;
-    }
-
-    void addMusica(Musica novaMusica){
-        for(int i = 0; i < musicas.length; i++){//Varrendo o array de musicas
-            if(musicas[i] == null){//Verifica se não existe musica
-                musicas[i] = novaMusica;
-                break; //Adiciona e sai do metodo
-            }
-        }
     }
 
     void addMembro(Membro novoMembro){
@@ -29,20 +24,25 @@ public class Banda{
         }
     }
 
-    void mostraInfo(){
-        System.out.println("A Banda: " + this.nome + " possui os seguintes membros:");
-        for (Membro membro : membros) {
-            if(membro != null)//Verifica se existe membro antes de imprimir
-                System.out.println(membro.getNome());
-        }
-        System.out.println("A Banda: " + this.nome + " possui as seguintes musicas:");
-        for (Musica musica : musicas) {
-            if(musica != null)//Verifica se existe musica antes de imprimir
-                System.out.println(musica.getNome());
+    void addMusica(Musica novaMusica){
+        for(int i = 0; i < musicas.length; i++){
+            if(musicas[i] == null){
+                musicas[i] = novaMusica;
+                break;
+            }
         }
     }
 
-    public void setEmpresario(Empresario empresario) {
-        this.empresario = empresario;
+    void mostraInfo(){
+        System.out.println("A Banda: " + this.nome + " dos integrantes:");
+        for (Membro membro : membros) {
+            if(membro != null)
+                System.out.println(membro.getNome());
+        }
+        System.out.println("tem o repertório:");
+        for (Musica musica : musicas) {
+            if(musica != null)
+                System.out.println(musica.getNome());
+        }
     }
 }
