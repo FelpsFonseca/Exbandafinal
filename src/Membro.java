@@ -1,13 +1,13 @@
 public class Membro{
 
-    private String nome, funcao;
+    String nome;
+    String funcao;
 
     public Membro(String nome, String funcao) {
         this.nome = nome;
         this.funcao = funcao;
     }
 
-    //Getters e Setter
     public String getNome() {
         return nome;
     }
