@@ -1,7 +1,7 @@
 public class Musica{
 
-    private String nome;
-    private double duracao;
+    String nome;
+    double duracao;
 
     public Musica(String nome, float duracao) {
         this.nome = nome;
